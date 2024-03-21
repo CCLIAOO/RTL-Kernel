@@ -13,6 +13,10 @@ Device: xilinx_u200_gen3x16_xdma_2_202110_1
 > # package rtl kernel via vivado
 > mkdir -p ./user-xo
 > vivado -mode batch -source scripts/gen_xo.tcl -tclargs ./user-xo/vadd.xo B2G hw xilinx_u200_gen3x16_xdma_2_202110_1
+>
+> HLS method
+> v++ -s -t hw --platform xilinx_u200_gen3x16_xdma_2_202110_1 -c -k vadd -o vadd.hw.xo src/vadd.cpp
+
 > ```
 
 ## Step3: Build up host program in vitis, [similar gui procedure](https://github.com/Xilinx/Vitis-Tutorials/blob/2023.2/Hardware_Acceleration/Feature_Tutorials/01-rtl_kernel_workflow/using_the_rtl_kernel.md) from xilinx tutorial, or follow [gui-flow](./doc/gui-flow.pdf)
