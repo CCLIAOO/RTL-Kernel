@@ -22,7 +22,7 @@ Device: xilinx_u200_gen3x16_xdma_2_202110_1
 > ```bash
 > # Link rtl kernel via vitis (v++ -t <hw | hw_emu>)
 > mkdir -p ./user-xclbin
-> v++ -t hw --platform xilinx_u200_gen3x16_xdma_2_202110_1 --save-temps --profile.data all:all:all  -l -o ./user-xclbin/vadd.hw.xclbin ./user-xo/vadd.hw.xo
+> v++ -t hw --platform xilinx_u200_gen3x16_xdma_2_202110_1 --save-temps --profile.data all:all:all --config connectivity.cfg  -l -o ./user-xclbin/vadd.hw.xclbin ./user-xo/vadd.hw.xo
 > cp -rf ./user-xclbin/B2G.hw_emu.xclbin ./B2G.xclbin
 > emconfigutil --platform xilinx_u200_gen3x16_xdma_2_202110_1 --od ./user-xclbin/
 > cp -rf ./user-xclbin//emconfig.json .
